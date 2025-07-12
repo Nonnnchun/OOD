@@ -27,12 +27,12 @@ class Stack():
          output += ' '
          output += i
       if len(output) == 0 :
-         return "Empty"
+         return "Value in Stack = Empty"
       else:
          return f"Value in Stack ={output}"
 
 stack = Stack()
-a = input("Enter input : ").split(",")
+a = input("Enter Input : ").split(",")
 for i in range(0,len(a)):
    if len(a[i]) > 1 :
       x = a[i].split()
