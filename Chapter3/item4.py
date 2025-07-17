@@ -70,6 +70,3 @@ for char in arg :
          stack.push(char)
 
 print(stack)
-# machine = StackCalculator()
-# machine.run(arg)
-# print(machine.get_value())
