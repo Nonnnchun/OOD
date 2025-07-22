@@ -11,8 +11,8 @@ class Queue():
    def is_empty(self):
       return len(self.queue) == 0
 
-   def enqueue(self, token):
-      return self.queue.append(token)
+   def enqueue(self, value):
+      return self.queue.append(value)
 
    def peek(self):
       if not self.is_empty():
