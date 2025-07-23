@@ -13,12 +13,6 @@ class Queue():
    def enqueue(self, value):
       return self.queue.append(value)
 
-   def enqueue_temp(self, value):
-      return self.temp.append(value)
-
-   def enqueue_reject(self, value):
-      return self.reject.append(value)
-
    def peek(self):
       if not self.is_empty():
          return self.queue[0]
