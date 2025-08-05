@@ -50,25 +50,33 @@ class LinkedList():
       print(t.data)
 
    def bubble_sort(self):
-      reset = self.head
+      if not self.head or not self.head.next:
+         return
+
       while not self.sort():
-         t = self.head
-         current  = self.head
-         next_one = self.head.next
-         while next_one != None:
+         prev = None
+         current = self.head
+         next_one = current.next
+
+         while next_one:
             if current.data > next_one.data:
-               t = next_one.data
-               next_one.data = current.data
-               current.data = t
+               if prev:
+                  prev.next = next_one
+               else:
+                  self.head = next_one
+               current.next = next_one.next
+               next_one.next = current
+
                print("")
-               print(f"Swapping {next_one.data} and {current.data}")
+               print(f"Swapping {current.data} and {next_one.data}")
                self.print_swap_list()
+
+               prev = next_one
+               next_one = current.next
             else:
-               current = current.next
+               prev = current
+               current = next_one
                next_one = next_one.next
-         current = reset
-
-
 
    def __str__(self):
       ans = []
