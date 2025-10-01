@@ -95,3 +95,16 @@ class AVLTree():
       # NOTE ------------------> AVLTree
       node.setHeight()
       return self.rebalance(node)
+
+   def printTree(self, node, level = 0, out = []):
+      if node != None:
+         self.printTree(node.right, level + 1, out)
+         print('     '* level, node)
+         self.printTree(node.left, level + 1, out)
+
+T = AVLTree()
+inp = [int(i) for i in input('Enter Input : ').split()]
+for i in inp:
+   root = T.insert(i)
+T.printTree(T.root)
+print(T.height_get(T.root))
